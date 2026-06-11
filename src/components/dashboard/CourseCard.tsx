@@ -13,6 +13,7 @@ import {
   Database,
   GitBranch,
   Sparkles,
+  type LucideProps,
 } from "lucide-react";
 import { tileVariants, progressBarVariants } from "@/lib/motion";
 import type { Course } from "@/types";
@@ -22,7 +23,7 @@ interface CourseCardProps {
   className?: string;
 }
 
-const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string; [key: string]: unknown }>> = {
+const iconMap: Record<string, React.FC<LucideProps>> = {
   Layers,
   Code2,
   Network,
@@ -69,13 +70,11 @@ export function CourseCard({ course, className = "" }: CourseCardProps) {
       style={{ minHeight: "170px" }}
       aria-label={`Course: ${course.title}`}
     >
-      {/* Card gradient background */}
       <div
         className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-60`}
         aria-hidden="true"
       />
 
-      {/* Hover glow border */}
       <motion.div
         className="absolute inset-0 rounded-2xl opacity-0"
         style={{ boxShadow: `inset 0 0 0 1px ${accent}40` }}
@@ -88,7 +87,6 @@ export function CourseCard({ course, className = "" }: CourseCardProps) {
       />
 
       <div className="relative z-10 flex flex-col h-full gap-3">
-        {/* Icon */}
         <div
           className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
           style={{ backgroundColor: `${accent}20`, border: `1px solid ${accent}30` }}
@@ -96,14 +94,12 @@ export function CourseCard({ course, className = "" }: CourseCardProps) {
           <Icon size={18} style={{ color: accent }} />
         </div>
 
-        {/* Title */}
         <div className="flex-1">
           <h3 className="text-sm font-semibold text-text-primary leading-tight line-clamp-2">
             {course.title}
           </h3>
         </div>
 
-        {/* Progress */}
         <div className="space-y-1.5">
           <div className="flex items-center justify-between">
             <span className="text-xs text-text-muted">Progress</span>
