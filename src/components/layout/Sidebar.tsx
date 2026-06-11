@@ -12,6 +12,7 @@ import {
   ChevronRight,
   Zap,
   User,
+  type LucideProps,
 } from "lucide-react";
 import { sidebarContainerVariants, sidebarItemVariants } from "@/lib/motion";
 import type { NavItem } from "@/types";
@@ -24,7 +25,7 @@ const navItems: NavItem[] = [
   { id: "settings", label: "Settings", icon: "Settings", href: "/settings" },
 ];
 
-const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+const iconMap: Record<string, React.FC<LucideProps>> = {
   LayoutDashboard,
   BookOpen,
   BarChart3,
@@ -35,7 +36,6 @@ const iconMap: Record<string, React.ComponentType<{ size?: number; className?: s
 export function Sidebar() {
   const [activeId, setActiveId] = useState("dashboard");
   const [collapsed, setCollapsed] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <>
