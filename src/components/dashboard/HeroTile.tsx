@@ -51,7 +51,7 @@ export function HeroTile({ className = "" }: HeroTileProps) {
             {new Date().toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })}
           </p>
           <h1 className="text-2xl md:text-3xl font-bold text-text-primary leading-tight">
-            Welcome back, <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-violet to-accent-cyan">Alex</span> 👋
+            Welcome back, <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-violet to-accent-cyan">Vivek</span> 👋
           </h1>
           <p className="text-text-secondary text-sm mt-2">
             You&apos;re on a roll! Keep up the momentum today.
