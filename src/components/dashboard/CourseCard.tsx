@@ -22,7 +22,7 @@ interface CourseCardProps {
   className?: string;
 }
 
-const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string; [key: string]: unknown }>> = {
   Layers,
   Code2,
   Network,
